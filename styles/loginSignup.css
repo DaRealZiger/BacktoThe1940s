@@ -1,0 +1,54 @@
+div.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+div.content {
+    height: 100%;
+    width: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    padding-top: 8%;
+}
+
+div.login-box {
+    background: rgb(15, 37, 54);
+    width: min-content;
+    height: 400px;
+    padding: 35px;
+}
+
+div.login-box p {
+    color: grey;
+}
+
+div.login-box input {
+    margin-bottom: 30px;
+    width: 380px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(15, 26, 35);
+    border: none;
+    padding: 10px 12px;
+    color: white;
+}
+
+div.login-box button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 18px;
+    border-radius: 19px;
+    display: block;
+    border: none;
+    color: white;
+    background-color: rgb(69, 78, 209);
+    margin-bottom: 55px;
+}
+
+p a {
+    color: rgb(69, 78, 209);
+}

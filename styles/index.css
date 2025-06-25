@@ -1,0 +1,50 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vw;
+}
+
+div.banner {
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+
+img.banner {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
+}
+
+div.content {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 0 30px;
+    align-self: stretch;
+    width: 100%;
+    /* background-color: lightgray; */
+}
+
+div.info {
+    margin: 20px 90px;
+}
+
+p.title {
+    width: max-content;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+p.paragraph {
+    font-size: medium;
+
+}
