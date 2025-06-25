@@ -12,7 +12,6 @@ if (isset($_POST['usersignup'])) {
 
     //create and login user
     createUser($conn, $username, $password);
-    loginUser($conn, $username, $password);
 }
 else {
     header("location: ../signup.php");

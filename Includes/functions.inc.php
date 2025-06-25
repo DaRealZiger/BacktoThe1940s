@@ -18,22 +18,22 @@ function createUser($conn, $username, $password){
 //login.inc.php
 function loginUser($conn, $username, $password) {
     $uidExists = uidExists($conn, $username);
-
+    
     if ($uidExists == false) {
         header("location: ../login.php?error=wrongLogin");
         exit();
     }
-
+    
     $storedPassword = $uidExists['password'];
     $checkedPassword = ($password == $storedPassword);
-
+    
     if ($checkedPassword == false) {
         header("location: ../login.php?error=wrongLogin");
         exit();
     } 
     else if ($checkedPassword == true) {
         session_start();
-
+        
         $_SESSION["uid"] = $uidExists['id'];
         $_SESSION["username"] = $uidExists['username'];
     }
@@ -51,12 +51,12 @@ function uidExists($conn, $username) {
         header("location: ../signup.php?error=why");
         exit();
     }
-
+    
     mysqli_stmt_bind_param($stmt, 's', $username);
     mysqli_stmt_execute($stmt);
-
+    
     $resultData = mysqli_stmt_get_result($stmt);
-
+    
     if ($row = mysqli_fetch_assoc($resultData)) {
         return $row;
     } else {
@@ -65,4 +65,18 @@ function uidExists($conn, $username) {
 
     return $result;
     mysqli_stmt_close();
+}
+//soloregister.inc.php
+function soloRegister($conn, $name, $ic, $email, $phone){
+    $sql = "INSERT INTO solo (name, ic, email, phone) VALUES (?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../soloregister.php?error=stmtFailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, 'sisi', $name, $ic, $email, $phone);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../menu.php?registered");
 }
