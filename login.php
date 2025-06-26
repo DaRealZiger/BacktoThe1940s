@@ -30,7 +30,7 @@ include "Includes/functions.inc.php"
                     <p class="form-label">Password</p>
                     <input type="password" name="password"
                     placeholder="password">
-                    <button type="submit" name="userlogin">Login</button>
+                    <button type="submit"name="userlogin">Login</button>
                 </form>
     
             </div>
