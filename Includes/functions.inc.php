@@ -83,15 +83,15 @@ function soloRegister($conn, $name, $ic, $email, $phone){
 }
 
 //grpregister.inc.php
-function grpRegister($conn, $name1, $ic1, $email1, $phone1, $name2, $ic2, $email2, $phone2, $name3, $ic3, $email3, $phone3){
-    $sql = "INSERT INTO grp (name1, ic1, email1, phone1, name2, ic2, email2, phone2, name3, ic3, email3, phone3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+function grpRegister($conn, $teamName, $name1, $ic1, $email1, $phone1, $name2, $ic2, $email2, $phone2, $name3, $ic3, $email3, $phone3){
+    $sql = "INSERT INTO grp (teamName, name1, ic1, email1, phone1, name2, ic2, email2, phone2, name3, ic3, email3, phone3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../soloregister.php?error=stmtFailed");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, 'sisisisisisi', $name1, $ic1, $email1, $phone1, $name2, $ic2, $email2, $phone2, $name3, $ic3, $email3, $phone3);
+    mysqli_stmt_bind_param($stmt, 'ssisisisisisi', $teamName, $name1, $ic1, $email1, $phone1, $name2, $ic2, $email2, $phone2, $name3, $ic3, $email3, $phone3);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../menu.php?registered?");

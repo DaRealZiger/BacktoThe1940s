@@ -2,6 +2,8 @@
 
 if (isset($_POST['registration'])) {
     //retrieve input
+    $teamName = $_POST['teamName'];
+
     $name1 = $_POST['name1'];
     $ic1 = $_POST['ic1'];
     $email1 = $_POST['email1'];
@@ -23,7 +25,7 @@ if (isset($_POST['registration'])) {
 
 
     //create and login user
-    grpRegister($conn, $name1, $ic1, $email1, $phone1, $name2, $ic2, $email2, $phone2, $name3, $ic3, $email3, $phone3);
+    grpRegister($conn, $teamName, $name1, $ic1, $email1, $phone1, $name2, $ic2, $email2, $phone2, $name3, $ic3, $email3, $phone3);
 }
 else {
     header("location: ../registration.php");

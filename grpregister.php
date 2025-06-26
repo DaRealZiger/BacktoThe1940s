@@ -13,6 +13,8 @@ include "Includes/functions.inc.php"
     </head>
     <body>
         <form action="includes/grpregister.inc.php" method = "POST">
+            <p class="form-label">Team Name</p>
+            <input type="text" placeholder="sample" name='teamName'>
             <p>Member 1</p>
             <p class="form-label">Name</p>
             <input type="text" placeholder="sample" name='name1'>
