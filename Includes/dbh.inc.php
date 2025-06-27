@@ -1,6 +1,6 @@
 <?php 
 
-$serverName = 'localhost:3307';
+$serverName = 'localhost';
 $dbUsername = 'root';
 $dbPwd = '';
 $dbName = 'coding competition';
